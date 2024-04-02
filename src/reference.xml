@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<bibliography xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+
+    xml:id="reference">
+
+<bibliomixed id="ref.zhihu_about_emb_driver_learn">
+  <bibliosource><ulink url="http://www.zhihu.com/question/21457018/answer/19517807">关于嵌入式驱动的学习？- 知乎</ulink></bibliosource>
+  <author>zhihu.com</author>
+</bibliomixed>
+
+<bibliomixed id="ref.csdn_hw_domain_tech_sys">
+  <bibliosource><ulink url="http://bbs.csdn.net/topics/390487802">硬件行业知识体系概要-CSDN论坛-CSDN.NET</ulink></bibliosource>
+  <author>Alex_rcpilot</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_bkg">
+  <bibliosource><ulink url="http://www.crifan.com/embedded_development_background/">嵌入式开发之嵌入式背景知识</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_basic_concept_and_logic">
+  <bibliosource><ulink url="http://www.crifan.com/embedded_development_basic_concept_develop_logic/">嵌入式开发之基本概念和开发逻辑</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_board_data_mining_concept">
+  <bibliosource><ulink url="http://www.crifan.com/qanda_embedded_data_acqusition_system_implement_process/">【问题解答】用一个嵌入式开发板去实现数据采集的基本思路和逻辑</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_glossary_concept">
+  <bibliosource><ulink url="http://www.crifan.com/summary_embedded_concept_name_explanation/">【整理】嵌入式领域的名词概念解释</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_note_summary">
+  <bibliosource><ulink url="http://www.crifan.com/summary_embedded_development_experience_and_note/">【整理】嵌入式开发经验和心得总结</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.similar_explain_emb_dev_need_which_knowledge">
+  <bibliosource><ulink url="http://www.crifan.com/summary_use_similar_building_field_explain_embedded_system_need_learn_which_kind_of_knowledge/">【整理】类比解释：嵌入式开发需要掌握哪些知识</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_technology_arch_summary">
+  <bibliosource><ulink url="http://www.crifan.com/embedded_system_software_field_knowledge_overview/">【整理】嵌入式软件知识体系概述</ulink></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+</bibliography>

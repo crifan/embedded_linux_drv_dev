@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+
+    xml:id="ch02_linux_module_framework">
+
+<title>Linux中某模块所属的子驱动框架</title>
+<abstract></abstract>
+
+<para>接下来，才是某个特定的设备的驱动的框架</para>
+<para>想要实现某个特定的设备的驱动之前，就先要对该设备，在Linux的整体的驱动体系中，处于什么部分，属于什么驱动方面的子框架，要有所了解。</para>
+<para>而这些子驱动框架，则是针对一类设备，统一管理，实现了该类设备的通用的功能和逻辑</para>
+<para>这样作为驱动开发人员，可以免去这部分的开发的工作，省了很多心</para>
+<para>比如：</para>
+<itemizedlist>
+    <listitem>MTD
+        <para>就是针对，内存类存储设备，而设计的一套框架，而属于内存类设备的，比如Nand Flash，Nor Flash等等，在编写驱动时，就要知道自己所要写的设备的驱动，是从属与MTD框架的</para>
+        <para>要知道，MTD框架，已经为我们所实现了哪些功能</para>
+        <para>比如MTD中的<filename>drivers/mtd/nand/nand_base.c</filename>中已经帮我们实现了，作为通用的MTD设备中的Nand Flash都会用到的：</para>
+        <itemizedlist>
+            <listitem>通用的命令：<function>nand_command</function>，<function>nand_command_lp</function></listitem>
+            <listitem>通用的数据读写：<function>nand_read_buf</function>，<function>nand_write_buf</function></listitem>
+            <listitem>基于page的各种操作：<function>nand_read_page_swecc</function>，<function>nand_read_page_hwecc</function>，<function> nand_write_page_raw</function>，<function> nand_write_page_hwecc</function></listitem>
+            <listitem>针对oob的各种操作：<function>nand_read_oob_std</function>，<function>nand_write_oob_std</function></listitem>
+            <listitem>针对block的各种操作：<function>nand_block_isbad</function>，<function>nand_block_markbad</function>，<function>nand_block_isreserved</function></listitem>
+        </itemizedlist>
+        <para>如此众多的功能和函数，都是Linux的MTD框架都是帮你写好了的。</para>
+        <para>换句话说，如果没有Linux的MTD框架，让你从头到尾，一点点写出一个完整的Linux的Nand Flash的驱动的话，对于上述提到的各种针对oob，page，block，command等等的操作，都是需要你自己从无到有去实现出来的。</para>
+    </listitem>
+    <listitem>USB
+        <para>Linux中的USB子驱动框架，也是帮我们实现了太多的基础的通用的功能。包括class，interface，endpoint，等等方面的基本功能，比如：</para>
+        <itemizedlist>
+            <listitem>所有USB类型都要用到的：<filename>drivers/usb/common/common.c</filename>
+                <itemizedlist>
+                    <listitem>USB的速度：<function>speed_names</function></listitem>
+                    <listitem>USB的各种状态：<function>usb_device_state</function></listitem>
+                    <listitem>USB的模式：<function>usb_dr_modes</function></listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>以及各种和class类型相关的：
+                <para></para>
+                <itemizedlist>
+                    <listitem><filename>drivers/usb/core/devices.c</filename>
+                        <itemizedlist>
+                            <listitem>class类型定义：<function>clas_info</function></listitem>
+                            <listitem>USB设备的读取：<function>usb_device_read</function></listitem>
+                            <listitem>各种描述符的获取：<function>usb_dump_device_descriptor</function>，<function>usb_dump_hub_descriptor</function>，<function>usb_dump_config_descriptor</function>，<function>usb_dump_interface_descriptor</function></listitem>
+                        </itemizedlist>
+                    </listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem>以及某种class类型的内部所通用的功能
+                <para>比如，最常见的USB大容量存储设备，即常说的U盘：</para>
+                <itemizedlist>其下所常用到的各种协议：<filename>drivers/usb/storage/protocol.c</filename>
+                    <listitem>UFI的命令：<function>usb_stor_ufi_command</function></listitem>
+                    <listitem>SCSI的命令：<function>usb_stor_transparent_scsi_command</function></listitem>
+                </itemizedlist>
+            </listitem>
+        </itemizedlist>
+    </listitem>
+</itemizedlist>
+<para>上述列出了很多不同模块和领域的驱动相关的名称，概念，咋一看会显得难以理解，但是实际上不用太关心此处的细节，而只需要记住一点即可：</para>
+<para>Linux的驱动，对于在某个子领域内，已经帮我们设计好了，适用于该领域的通用的框架，对应着某个驱动的子框架，且已经帮我们实现好了，大量的，常见和通用的功能</para>
+<para>这样我们在实现对应设备驱动的时候，对于该设备所属的领域内的通用的功能，就可以不用自己再重新写了，就避免了重复造轮子的无用功的浪费了。</para>
+<para></para>
+<para>由此可见：<emphasis>在Linux下面写某设备的驱动，虽然需要增加额外的精力去学习该设备所属的驱动的子框架，但是这点额外的学习成本，和该框架帮你省下的精力相对，要划算的多。</emphasis></para>
+<para>即：<emphasis>Linux子驱动框架已经帮我们实现了非常多通用的功能部分，可以帮我们写驱动时，省掉很大一部分精力，而我们只需要搞懂子驱动框架后，去实现余下的和设备相关的部分即可。</emphasis></para>
+<para></para>
+
+</chapter>

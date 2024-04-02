@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE book
+[
+
+<!ENTITY cur_book_name      "embedded_linux_drv_dev" >
+<!ENTITY publish_date       "2015-03-15" >
+<!ENTITY release_version    "0.6" >
+
+<!ENTITY copyrith_year "2015" >
+<!ENTITY entity_common_multi_format     SYSTEM  "../../entity_common_multi_format.xml">
+<!ENTITY entity_common_publish_info     SYSTEM  "../../entity_common_publish_info.xml">
+]>
+
+<book version="5.0"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xml:lang="zh_CN"
+    >
+
+<info>
+    <title>嵌入式Linux驱动开发</title>
+    <subtitle></subtitle>
+    <keywordset>
+        <keyword>嵌入式</keyword>
+        <keyword>Linux</keyword>
+        <keyword>驱动</keyword>
+        <keyword>开发</keyword>
+    </keywordset>
+
+    <abstract>
+        <para>此文主要介绍的嵌入式Linux驱动开发的概念，逻辑，具体开发步骤，所要涉及哪些内容。</para>
+        &entity_common_multi_format;
+    </abstract>
+
+    <revhistory>
+        <revision>
+            <revnumber>&release_version;</revnumber>
+            <date>&publish_date;</date>
+            <revremark>
+                <orderedlist>
+                    <listitem>解释嵌入式Linux驱动开发的概念</listitem>
+                </orderedlist>
+            </revremark>
+            <authorinitials>crl</authorinitials>
+        </revision>
+    </revhistory>
+
+    &entity_common_publish_info;
+</info>
+
+<xi:include href="preface.xml"/>
+<xi:include href="ch01_linux_drv_model.xml"/>
+<xi:include href="ch02_linux_module_framework.xml"/>
+<xi:include href="ch03_implement_driver_specific.xml"/>
+<xi:include href="ch04_linux_drv_dev_res.xml"/>
+<xi:include href="reference.xml"/>
+
+</book>

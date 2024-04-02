@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+
+    xml:id="ch04_linux_drv_dev_res">
+
+<title>嵌入式Linux驱动开发相关资源</title>
+<abstract></abstract>
+
+<sect1 xml:id="linux_drv_books"><title>嵌入式Linux驱动开发书籍</title>
+    <para>关于嵌入式Linux驱动开发，有一些还不错的值得推荐的书：</para>
+    <itemizedlist>
+        <listitem><link xl:href="http://book.douban.com/subject/2984156/">Linux设备驱动开发详解 (豆瓣)</link>
+            <para>相对来说，这本书是我看到的，国内的在介绍嵌入式Linux驱动方面解释的算是逻辑性还不错的。</para>
+            <para>虽然也像之前某人评价的，当你对于嵌入式Linux驱动已经入门之后，了解了驱动框架，进入实际的驱动开发时，</para>
+            <para>你又会发现，实际上该书对你的帮助就不是那么大了，会觉得该书有点“虚”，解释的不是那么透彻和扎实了。</para>
+            <para>但是总体来说，还是值得一看了。</para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+</sect1>
+
+</chapter>

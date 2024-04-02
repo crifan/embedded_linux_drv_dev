@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+
+    xml:id="ch01_linux_drv_model">
+
+<title>Linux驱动模型</title>
+<abstract></abstract>
+
+<sect1 xml:id="why_driver_model"><title>为什么要设计一个Linux驱动的模型</title>
+    <para>为了方便统一管理Linux下面的，如此众多的，成千上万的，设备的驱动，</para>
+    <para>所以要设计一个，统一的框架，即Linux驱动模型</para>
+    <para>此模型，就相当于一个模子，其他驱动，都要合乎这个模子，长得看起来都很类似，</para>
+    <para>如此才能注册到Linux驱动框架中，让驱动接受Linux系统的统一的管理。</para>
+    <para></para>
+</sect1>
+
+</chapter>

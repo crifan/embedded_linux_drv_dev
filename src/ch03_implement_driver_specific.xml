@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+
+    xml:id="ch03_implement_driver_specific">
+
+<title>实现子驱动框架下面的设备相关部分的功能</title>
+<abstract></abstract>
+
+<para>接下来，就是要去实现，该设备的所在的子驱动框架下，自己的设备相关的部分了。</para>
+<para>往往也都是些：</para>
+<itemizedlist>
+    <listitem>设备初始化</listitem>
+    <listitem>数据的读写
+        <itemizedlist>
+            <listitem>数据的读（取）read操作==数据发送send操作</listitem>
+            <listitem>数据的写（入）write操作==数据接收receive操作</listitem>
+        </itemizedlist>
+    </listitem>
+</itemizedlist>
+<para>下面举一些例子来说明</para>
+<itemizedlist>
+    <listitem>实现Nand Flash驱动时要实现哪些部分</listitem>
+    <listitem>实现USB驱动时要实现哪些部分</listitem>
+</itemizedlist>
+
+</chapter>
